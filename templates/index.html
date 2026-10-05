@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Crop Disease AI</title>
+</head>
+
+<body>
+
+<h2>Upload Leaf Image</h2>
+
+<form method="POST" enctype="multipart/form-data">
+<input type="file" name="file" required>
+<button type="submit">Predict</button>
+</form>
+
+{% if image_path %}
+<img src="{{ image_path }}" width="300">
+{% endif %}
+
+{% if prediction %}
+<h3>Disease: {{ prediction }}</h3>
+
+<p><b>Causes:</b> {{ info.causes }}</p>
+<p><b>Treatment:</b> {{ info.treatment }}</p>
+
+{% endif %}
+
+</body>
+</html>

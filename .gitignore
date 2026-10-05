@@ -1,0 +1,49 @@
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+
+# Python byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+
+# Datasets
+dataset/
+PlantVillage/
+*.zip
+*.tar.gz
+
+# Uploaded images (preserve directory structure with .gitkeep)
+static/uploads/*
+!static/uploads/.gitkeep
+
+# Large trained model files (>100MB)
+*.h5
+*.keras
+*.tflite
+*.pt
+*.pth
+*.onnx
+*.weights.h5
+
+# Logs and temporary cache
+*.log
+*.tmp
+*.temp
+.cache/
+.pytest_cache/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# IDE configuration files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace

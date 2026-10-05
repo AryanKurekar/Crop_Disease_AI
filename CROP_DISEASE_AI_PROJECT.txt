@@ -1,0 +1,39 @@
+Crop Disease AI
+================
+A web-based machine learning application that detects crop leaf diseases from user-uploaded images using a Convolutional Neural Network (CNN) and Flask.
+
+Project Overview:
+- Users upload an image of a plant leaf via a clean web interface.
+- A custom Convolutional Neural Network (CNN) trained with TensorFlow/Keras analyzes the image.
+- The web app displays the predicted crop condition along with details regarding causes, prevention, and recommended treatment.
+
+Supported Classes:
+- Healthy
+- Early Blight
+- Late Blight
+- Mosaic Virus
+
+Technology Stack:
+- Python
+- TensorFlow / Keras (CNN architecture)
+- Flask (Web backend & routing)
+- HTML5 / CSS / Bootstrap (User interface)
+- PlantVillage dataset subset (downloaded via KaggleHub)
+
+Workflow:
+1. Data Preparation (prepare_dataset.py):
+   Downloads the PlantVillage dataset subset using KaggleHub, extracts the target categories, and creates train/test splits (80/20) under dataset/.
+2. Model Training (model_training.py):
+   Builds and trains a sequential CNN architecture (Conv2D, MaxPooling2D, Dropout, Dense) with data augmentation (rotation, zoom, horizontal flip), saving class mappings to class_indices.json and trained weights to crop_disease_model.h5.
+3. Web Inference (app.py):
+   Flask web application that provides an upload interface, processes leaf images (224x224 RGB), performs CNN inference, and displays prediction results with causes and treatments.
+
+Project Structure:
+- app.py                  : Flask application and prediction endpoint
+- model_training.py       : CNN architecture design and training pipeline
+- prepare_dataset.py      : Dataset download and train/test split preparation
+- check_folders.py        : Utility script to inspect dataset classes
+- class_indices.json      : Class index mapping for model predictions
+- requirements.txt        : Project package dependencies
+- templates/              : HTML templates for Flask UI (index.html)
+- static/uploads/         : Upload directory for user images
